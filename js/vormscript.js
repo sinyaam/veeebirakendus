@@ -16,12 +16,14 @@ function lugemine2() {
     let email=document.getElementById("email").value;
     let tel=document.getElementById("tel").value;
     let url=document.getElementById("url").value;
+    let pilt=document.getElementById("pilt");
 
     if (mees.checked) {
         vastus.innerHTML ="Tere hommikust, mees "+nimi+" "+pnimi+"!"+
         " Sinu sünnipäev on "+paev+"<br>GB RAM-i teil on:"+GBRAM+"<br>teil email on:"
             +email+"<br>teil tel number on:"+tel+"<br>url, mille kirjutasid:"+url;
         vastus.style.color =varv.value;
+        pilt.src="mees.png";
 
     }
     else if (naine.checked) {
@@ -29,8 +31,43 @@ function lugemine2() {
         " Sinu sünnipäev on "+paev+"<br>GB RAM-i teil on:"+GBRAM+"<br>teil email on:"
             +email+"<br>teil tel number on:"+tel+"<br>url, mille kirjutasid:"+url;
         vastus.style.color =varv.value;
+        pilt.src="naine.png";
     }
     else {
         vastus.innerHTML ="täitke andmed"
     }
+}
+function selectVAlik(){
+    let vastus2=document.getElementById("vastus2");
+    let linn=document.getElementById("linn");
+
+    vastus2.innerHTML ="Sinu linn -"+linn.value;
+    vastus2.style.backgroundColor ="lightgreen";
+}
+function checkboxValik(){
+
+    let vastus3=document.getElementById("vastus3");
+    let sport=document.getElementById("sport");
+    let joonistamine=document.getElementById("joonistamine");
+    let muusika=document.getElementById("muusika");
+    let reisida=document.getElementById("reisida");
+    let kaljuronimine=document.getElementById("kaljuronimine");
+    let hobby=""
+    if (sport.checked) {
+        hobby+=sport.value+", ";
+    }
+    if (joonistamine.checked) {
+        hobby+=joonistamine.value+", ";
+    }
+    if (muusika.checked) {
+        hobby+=muusika.value+", ";
+    }
+    if (reisida.checked) {
+        hobby += reisida.value + ", ";
+    }
+    if (kaljuronimine.checked) {
+            hobby+=kaljuronimine.value+", ";
+
+    }
+    vastus3.innerHTML ="sinu hobby -"+hobby;
 }
